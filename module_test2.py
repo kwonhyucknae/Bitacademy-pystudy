@@ -1,0 +1,23 @@
+#from ... import
+
+from math import pi, sin,cos, tan
+from mymod import pi,add,substract,multiply
+import mymod
+#모듈명 지정 없이 이름으로만 호출 할 수 있게
+
+print(pi)
+#이름 값이 중복 뒤쪽에서 정의한애가 최종적으로 덮어씀
+
+print(add(10,20))
+
+#객체 내부에 __module__을 확인하면 그 객체가 어느 모듈에 속해있는지 확인
+#add 메서드의 모듈은 무엇인가
+#print(add.__module__)
+#print(dir(add.__module__) # add 메서드의 객체의 내부 변수와 객체의 목록
+
+#add 객체의 모듈에 있는 substract 함수를 실행해 봅시다
+# eval: 문자열로 넘겨받은 내용에 대해 실행을 시도
+
+print(eval(add.__module__+'.substract(10,10)'))
+
+
